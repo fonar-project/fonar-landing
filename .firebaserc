@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "praatico-c2880"
+  },
+  "targets": {
+    "praatico-c2880": {
+      "hosting": {
+        "praatico": [
+          "praatico"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
