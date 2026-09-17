@@ -1,0 +1,7 @@
+<!-- PROVISÓRIO. TODO: trocar pela marca definitiva do FONAR quando ela
+     existir. Isto é só a inicial desenhada na paleta do design system, para
+     o site não sair em produção com o ícone do create-next-app. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="FONAR">
+  <rect width="64" height="64" rx="14" fill="#40085E"></rect>
+  <path d="M22 16H44V25H31V29H40V38H31V48H22Z" fill="#FFF7EB"></path>
+</svg>
