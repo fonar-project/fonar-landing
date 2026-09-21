@@ -12,9 +12,9 @@ Não há ilustrações vetoriais no design system: espectrograma e formas de ond
 | `reproduzir.svg` | players de amostra (04, 05, 07) |
 | `pausar.svg` | players de amostra (04, 05, 07) |
 | `sem-referencia.svg` | medida sem faixa de referência (07, 09, 10, 11) |
-| `tendencia-melhora.svg` | chip de tendência AVQI ↗ (01) |
+| `tendencia-sobe.svg` | chip de tendência AVQI ↗ (01) |
 | `tendencia-estavel.svg` | chip de tendência AVQI → (01) |
-| `tendencia-piora.svg` | chip de tendência AVQI ↘ (01) |
+| `tendencia-desce.svg` | chip de tendência AVQI ↘ (01) |
 | `voltar.svg` | cabeçalho mobile ‹ (02, 03, 05, 06, 07, 10, 11) |
 | `avancar.svg` | linhas de lista e CTAs › (01, 02, 05, 06, 07, 09, 10) |
 | `adicionar.svg` | nova avaliação ＋ (01, 02) |
