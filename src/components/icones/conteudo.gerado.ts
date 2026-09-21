@@ -24,9 +24,9 @@ export const MIOLO_ICONES = {
   "pausar": "<rect x=\"7\" y=\"5\" width=\"3.5\" height=\"14\" rx=\"1\" fill=\"currentColor\"></rect><rect x=\"13.5\" y=\"5\" width=\"3.5\" height=\"14\" rx=\"1\" fill=\"currentColor\"></rect>",
   "reproduzir": "<path d=\"M8 5l12 7-12 7z\" fill=\"currentColor\"></path>",
   "sem-referencia": "<path d=\"M12 3l7 9-7 9-7-9z\" fill=\"currentColor\"></path>",
+  "tendencia-desce": "<path d=\"M6 6l12 12M18 9v9H9\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
   "tendencia-estavel": "<path d=\"M4 12h15M14 7l5 5-5 5\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
-  "tendencia-melhora": "<path d=\"M6 18L18 6M9 6h9v9\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
-  "tendencia-piora": "<path d=\"M6 6l12 12M18 9v9H9\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
+  "tendencia-sobe": "<path d=\"M6 18L18 6M9 6h9v9\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
   "virar-para-paciente": "<path d=\"M20 12a8 8 0 1 1-2.34-5.66\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"></path><path d=\"M20 3.5V8h-4.5\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
   "voltar": "<path d=\"M15 5l-7 7 7 7\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
 } as const;
