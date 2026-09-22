@@ -1,0 +1,18 @@
+# Fim de linha normalizado no repositório: tudo o que for texto é gravado em
+# LF no commit, independente do sistema de quem commita. Sem isso, um checkout
+# com core.autocrlf=true deixa arquivo gerado em CRLF no disco e o
+# npm run icones:verificar reprova só no Windows, passando no CI.
+* text=auto eol=lf
+
+# Script de shell do Windows precisa de CRLF para o interpretador.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binários: nunca converter.
+*.png  binary
+*.jpg  binary
+*.ico  binary
+*.ttf  binary
+*.otf  binary
+*.woff binary
+*.woff2 binary
