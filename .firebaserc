@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "praatico-c2880"
+    "default": "fonar-763db"
   },
   "targets": {
-    "praatico-c2880": {
+    "fonar-763db": {
       "hosting": {
-        "praatico": [
-          "praatico"
+        "fonar": [
+          "appfonar"
         ]
       }
     }

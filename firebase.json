@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "praatico",
+    "target": "fonar",
     "public": "out",
     "ignore": [
       "firebase.json",

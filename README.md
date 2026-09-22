@@ -124,8 +124,8 @@ Configurado em `.github/workflows/`:
   PRs vindos de forks são ignorados de propósito (o `if` compara
   `head.repo.full_name` com o repositório).
 
-Ambos autenticam com o secret `FIREBASE_SERVICE_ACCOUNT_PRAATICO_C2880` e passam
-`target: praatico` explicitamente.
+Ambos autenticam com o secret `FIREBASE_SERVICE_ACCOUNT_FONAR_763DB` e passam
+`target: fonar` explicitamente.
 
 Na prática: **abra PR, veja o preview, faça merge — o deploy sai sozinho.** Você
 não precisa rodar nada localmente.
@@ -152,21 +152,21 @@ anterior.
 
 ## Configuração de target do Firebase
 
-O projeto Firebase `praatico-c2880` tem **dois sites de hosting**:
+O projeto Firebase `fonar-763db` tem **dois sites de hosting**:
 
 | Site | URL | Papel |
 |---|---|---|
 | `praatico` | https://praatico.web.app | **produção** |
-| `praatico-c2880` | https://praatico-c2880.web.app | site default criado junto com o projeto, não usado |
+| `fonar-763db` | https://praatico-c2880.web.app | site default criado junto com o projeto, não usado |
 
 O `.firebaserc` mapeia o target `praatico` → site `praatico`, e o `firebase.json`
-fixa `"target": "praatico"`. Os dois arquivos estão commitados, então um clone
+fixa `"target": "fonar"`. Os dois arquivos estão commitados, então um clone
 novo já vem apontando para o lugar certo.
 
 Confira o mapeamento a qualquer momento:
 
 ```bash
-firebase target --project praatico-c2880
+firebase target --project fonar-763db
 # [ hosting ]
 # praatico (praatico)
 ```
@@ -175,7 +175,7 @@ firebase target --project praatico-c2880
 `firebase.json` fixa o target, hoje um `firebase deploy --only hosting` sem nome
 também resolve certo — mas essa proteção some se alguém remover a chave
 `"target"` do `firebase.json` ou bagunçar o mapeamento com `firebase
-target:apply`. Sem o target, o deploy cai no site default `praatico-c2880`, e o
+target:apply`. Sem o target, o deploy cai no site default `fonar-763db`, e o
 sintoma é confuso: o comando termina com sucesso e a produção simplesmente não
 muda.
 

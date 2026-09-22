@@ -20,7 +20,7 @@ jobs:
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_PRAATICO_C2880 }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_FONAR_763DB }}
           channelId: live
-          projectId: praatico-c2880
-          target: praatico
+          projectId: fonar-763db
+          target: fonar
