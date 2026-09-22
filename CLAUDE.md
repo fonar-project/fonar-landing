@@ -1,15 +1,11 @@
 # FONAR — Landing Page
 
-> O projeto se chama **FONAR**. Repositório, organização, projeto Firebase e
-> URL ainda usam o nome antigo "praatico" — é legado, o rename está pendente.
-> Nunca nomeie nada novo como "praatico".
-
 ## Contexto
 Landing page comercial e informativa do FONAR, plataforma de avaliação vocal
 clínica para fonoaudiólogos. TCC de Engenharia de Software, PUC-Campinas.
 Público: fonoaudiólogos e clínicas de voz, não é público técnico.
 
-Produção: https://praatico.web.app
+Produção: https://appfonar.web.app
 
 ## Stack
 Next.js (App Router), TypeScript, Tailwind CSS.
@@ -121,9 +117,9 @@ tipado, arquivo `.svg` e índice do README saírem de sincronia, ou se algum
 ## Deploy
 Automático via GitHub Actions: merge na `main` publica em produção, cada PR
 gera canal de preview. Manual só em emergência:
-`npm run build && firebase deploy --only hosting:praatico`
+`npm run build && firebase deploy --only hosting:fonar`
 
-O projeto Firebase tem dois sites. O deploy vai para o target `praatico`.
+O projeto Firebase tem dois sites. O deploy vai para o target `fonar`.
 Nunca rode deploy sem nomear o target.
 
 ## Estado atual
