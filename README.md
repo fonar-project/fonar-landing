@@ -1,10 +1,10 @@
-# Praatico — Landing Page
+# FONAR — Landing Page
 
-Landing page comercial e informativa do **Praatico**, plataforma de avaliação
+Landing page comercial e informativa do **FONAR**, plataforma de avaliação
 vocal clínica para fonoaudiólogos. Projeto de TCC de Engenharia de Software —
 PUC-Campinas.
 
-Produção: **https://praatico.web.app**
+Produção: **https://appfonar.web.app**
 
 > [!WARNING]
 > **Só a fundação técnica existe.** O que está no repositório hoje é o esqueleto
@@ -56,8 +56,8 @@ shells — não há passo de `.env`, o projeto sobe sem nenhuma variável de amb
 **PowerShell**
 
 ```powershell
-git clone git@github.com:praatico/praatico-landing.git
-cd praatico-landing
+git clone git@github.com:fonar-project/fonar-landing.git
+cd fonar-landing
 npm install
 npm run dev
 ```
@@ -65,8 +65,8 @@ npm run dev
 **bash**
 
 ```bash
-git clone git@github.com:praatico/praatico-landing.git
-cd praatico-landing
+git clone git@github.com:fonar-project/fonar-landing.git
+cd fonar-landing
 npm install
 npm run dev
 ```
@@ -118,7 +118,7 @@ interatividade real.
 Configurado em `.github/workflows/`:
 
 - **`firebase-hosting-merge.yml`** — todo push na `main` builda e publica no canal
-  `live`, ou seja, em https://praatico.web.app.
+  `live`, ou seja, em https://appfonar.web.app.
 - **`firebase-hosting-pull-request.yml`** — todo PR aberto a partir de uma branch
   **deste** repositório gera um canal de preview com URL própria, comentada no PR.
   PRs vindos de forks são ignorados de propósito (o `if` compara
@@ -141,7 +141,7 @@ Se o Actions estiver fora do ar:
 
 ```bash
 npm run build
-firebase deploy --only hosting:praatico
+firebase deploy --only hosting:fonar
 ```
 
 O `build` **precisa** rodar antes — o `firebase deploy` só empacota a pasta `out/`
@@ -156,10 +156,10 @@ O projeto Firebase `fonar-763db` tem **dois sites de hosting**:
 
 | Site | URL | Papel |
 |---|---|---|
-| `praatico` | https://praatico.web.app | **produção** |
-| `fonar-763db` | https://praatico-c2880.web.app | site default criado junto com o projeto, não usado |
+| `appfonar` | https://appfonar.web.app | **produção** |
+| `fonar-763db` | https://fonar-763db.web.app | site default criado junto com o projeto, não usado |
 
-O `.firebaserc` mapeia o target `praatico` → site `praatico`, e o `firebase.json`
+O `.firebaserc` mapeia o target `fonar` → site `appfonar`, e o `firebase.json`
 fixa `"target": "fonar"`. Os dois arquivos estão commitados, então um clone
 novo já vem apontando para o lugar certo.
 
@@ -168,10 +168,10 @@ Confira o mapeamento a qualquer momento:
 ```bash
 firebase target --project fonar-763db
 # [ hosting ]
-# praatico (praatico)
+# fonar (appfonar)
 ```
 
-**Sempre nomeie o target no deploy** (`--only hosting:praatico`). Como o
+**Sempre nomeie o target no deploy** (`--only hosting:fonar`). Como o
 `firebase.json` fixa o target, hoje um `firebase deploy --only hosting` sem nome
 também resolve certo — mas essa proteção some se alguém remover a chave
 `"target"` do `firebase.json` ou bagunçar o mapeamento com `firebase
@@ -197,7 +197,7 @@ out/                   saída do build; é o que o Firebase publica (git-ignored
 .next/                 cache de build do Next (git-ignored)
 .firebase/             cache local do CLI do Firebase (git-ignored)
 next.config.ts         output:'export', images.unoptimized, trailingSlash
-firebase.json          hosting: public=out, target=praatico
+firebase.json          hosting: public=out, target=fonar
 .firebaserc            projeto default + mapeamento target -> site
 CLAUDE.md              convenções do projeto para agentes de IA
 AGENTS.md              gerado e re-adicionado pelo `next dev`; não apague à mão

@@ -23,6 +23,14 @@ import {
   validarIcone,
 } from "./lib-icones.mjs";
 
+/**
+ * Fim de linha normalizado para comparação. O arquivo gerado é escrito em LF,
+ * mas um clone feito antes do .gitattributes — ou qualquer checkout com
+ * core.autocrlf=true — deixa CRLF no disco. Comparar cru faria o verificador
+ * reprovar no Windows e passar no CI, com o conteúdo idêntico nos dois.
+ */
+const normalizarEol = (texto) => texto.replace(/\r\n/g, "\n");
+
 const erros = [];
 const reprovar = (mensagem) => erros.push(mensagem);
 
@@ -43,7 +51,7 @@ if (!existsSync(ARQUIVO_GERADO)) {
     `${relativo(ARQUIVO_GERADO)} não existe. Rode: npm run icones:gerar`,
   );
 } else {
-  const fonteAtual = readFileSync(ARQUIVO_GERADO, "utf8");
+  const fonteAtual = normalizarEol(readFileSync(ARQUIVO_GERADO, "utf8"));
   const nomesTipados = [
     ...fonteAtual.matchAll(/^ {2}"([^"]+)":/gm),
   ].map(([, nome]) => nome);
@@ -67,7 +75,10 @@ if (!existsSync(ARQUIVO_GERADO)) {
   }
 
   // 2. Conteúdo gerado x arquivos de hoje.
-  if (erros.length === 0 && fonteAtual !== gerarFonte(nomesEmArquivo)) {
+  if (
+    erros.length === 0 &&
+    fonteAtual !== normalizarEol(gerarFonte(nomesEmArquivo))
+  ) {
     reprovar(
       `${relativo(ARQUIVO_GERADO)} está desatualizado em relação aos .svg. ` +
         `Rode: npm run icones:gerar`,
