@@ -11,9 +11,9 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "FONAR",
+  title: "FONAR — Avaliação vocal clínica",
   description:
-    "Plataforma de avaliação vocal clínica para fonoaudiólogos. Site em construção.",
+    "Gravação guiada, análise acústica, escalas perceptivas e laudo em PDF: a avaliação vocal clínica em um único fluxo. Cadastre-se para ser avisado do lançamento.",
   // TODO: favicon provisório com a inicial. Trocar por /marca/ definitivo
   // quando a marca do FONAR existir — ver public/marca/README.md.
   icons: { icon: "/marca/favicon.svg" },

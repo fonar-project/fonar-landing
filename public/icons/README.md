@@ -8,6 +8,7 @@ Não há ilustrações vetoriais no design system: espectrograma e formas de ond
 | `confirmacao.svg` | qualidade boa (02, 05, 07), consentimento registrado (02, 03), passos concluídos (06), checklist do laudo (10, 11) |
 | `alerta.svg` | credencial inválida (00), amostra com problema (02, 05, 07), falha de envio (06), fora da faixa (07, 09, 10) |
 | `negacao.svg` | consentimento não registrado (02, 03) |
+| `documento.svg` | laudo em PDF (10, 11) |
 | `gravar.svg` | iniciar gravação (03, 04), passo atual da fila (06) |
 | `reproduzir.svg` | players de amostra (04, 05, 07) |
 | `pausar.svg` | players de amostra (04, 05, 07) |

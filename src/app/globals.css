@@ -16,10 +16,36 @@
 @theme {
   --color-creme: #fff7eb;
   --color-roxo: #40085e;
+  --color-roxo-escuro: #2a0540;
   --color-chumbo: #413c58;
   --color-lavanda: #dbd2e0;
   --color-secundario: #6e6787;
   --color-secundario-lavanda: #5a5472;
 
   --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Animação de entrada do design system: sobe 20px e aparece. O atraso de
+   cada elemento é controlado inline (style) pelo componente Revelar, criando
+   a entrada escalonada sem JS. prefers-reduced-motion desliga o movimento
+   para quem pediu menos animação. */
+@keyframes fonarRise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animacao-fonar-rise {
+  animation: fonarRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animacao-fonar-rise {
+    animation: none;
+  }
 }
