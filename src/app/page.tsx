@@ -3,7 +3,6 @@ import { Funcionalidades } from "@/components/secoes/Funcionalidades";
 import { Comparativo } from "@/components/secoes/Comparativo";
 import { Ciencia } from "@/components/secoes/Ciencia";
 import { Download } from "@/components/secoes/Download";
-import { Captacao } from "@/components/secoes/Captacao";
 import { Rodape } from "@/components/secoes/Rodape";
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
         <Comparativo />
         <Ciencia />
         <Download />
-        <Captacao />
       </main>
       <Rodape />
     </>

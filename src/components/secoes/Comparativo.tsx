@@ -11,12 +11,12 @@ const JEITO_ANTIGO = [
 ];
 
 const JEITO_FONAR = [
-  "Gravação guiada no próprio celular, com protocolo clínico",
-  "Métricas acústicas calculadas automaticamente pelo Praat",
-  "Escalas perceptivas e autopercepção no mesmo fluxo",
-  "Consentimento e registro do paciente incluídos",
+  "Gravação guiada no celular ou no computador, com o ruído da sala medido antes",
+  "Medidas acústicas calculadas pelo motor do Praat, sem copiar números à mão",
+  "CAPE-V na mesma avaliação, ouvindo a gravação",
+  "Consentimento e cadastro do paciente incluídos",
   "Laudo em PDF gerado ao final da avaliação",
-  "Histórico completo do paciente em um só lugar",
+  "Histórico e evolução do paciente em um só lugar",
 ];
 
 export function Comparativo() {

@@ -6,14 +6,16 @@ PUC-Campinas.
 
 Produção: **https://appfonar.web.app**
 
-> [!WARNING]
-> **Só a fundação técnica existe.** O que está no repositório hoje é o esqueleto
-> Next.js + Tailwind + deploy configurado. O conteúdo e a identidade visual ainda
-> não foram feitos — dependem do Figma. A `src/app/page.tsx` ainda é a página
-> padrão do `create-next-app`.
->
-> Não invente textos definitivos, depoimentos, números ou logos. Onde faltar
-> conteúdo real, deixe um `TODO` visível.
+A home apresenta o FONAR e leva ao **download**: Windows, macOS e Android pelo
+último release do [repositório do app](https://github.com/fonar-project/fonar-app/releases),
+e iPhone e iPad pela [versão web](https://fonar-project.github.io/fonar-app/).
+Os links moram em `src/lib/downloads.ts` e não mudam a cada versão.
+
+> [!IMPORTANT]
+> O conteúdo afirma só o que o app faz de verdade (regras em `CLAUDE.md`).
+> Não invente depoimentos, números ou logos; onde faltar conteúdo real, deixe
+> um `TODO` visível. A marca definitiva ainda não existe: o favicon é
+> provisório (`public/marca/README.md`).
 
 ---
 
@@ -101,8 +103,6 @@ Consequência direta — **nada disso funciona neste projeto**:
 
 Resolva **no cliente**, dentro de um componente `"use client"`:
 
-- **Formulário de captação de leads:** escreve direto no Firestore pelo SDK web
-  do Firebase, a partir do browser. Sem backend intermediário.
 - **Qualquer outra chamada:** `fetch` para um serviço externo, feito no browser.
 
 Server Components continuam sendo o padrão para renderizar conteúdo — eles rodam
@@ -185,14 +185,24 @@ muda.
 
 ```
 .github/workflows/     CI — deploy na main e preview em PR
-public/                assets servidos na raiz do site (/next.svg, ...)
+public/
+  icons/               ícones da interface, espelhados com o app
+  marca/               marca e favicon, só da landing
+scripts/               gerar e verificar os ícones
 src/
   app/                 App Router
     layout.tsx         layout raiz (fontes, <html>, metadata)
-    page.tsx           home — ainda o template do create-next-app
-    globals.css        entrada do Tailwind
-    favicon.ico
-  components/          NÃO EXISTE AINDA — criar aqui os componentes
+    page.tsx           home: as seções em ordem
+    not-found.tsx      a página 404
+    globals.css        tokens do design system e a animação de entrada
+  components/
+    secoes/            Hero, Funcionalidades, Comparativo, Ciencia,
+                       Download e Rodape
+    icones/            o componente único de ícone (SVG embutido)
+    Botao.tsx          o único visual de botão, sobre link
+    Revelar.tsx        a entrada escalonada, sem JS
+  lib/
+    downloads.ts       os links de download, num lugar só
 out/                   saída do build; é o que o Firebase publica (git-ignored)
 .next/                 cache de build do Next (git-ignored)
 .firebase/             cache local do CLI do Firebase (git-ignored)
