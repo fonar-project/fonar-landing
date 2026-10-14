@@ -35,8 +35,12 @@ tamanho, para celular e desktop. Prefira SVG a PNG sempre que possível e
 mantenha os PNG enxutos.
 
 Qualquer necessidade dinâmica se resolve no cliente, em componente
-`"use client"`. O formulário de captação escreve direto no Firestore pelo SDK
-web do Firebase, sem backend intermediário.
+`"use client"`.
+
+O site não coleta dado nenhum: não há formulário, lista de espera nem
+Firebase no cliente (a captação de interessados saiu quando o app passou a
+ser baixável). Se um dia voltar a coletar algo, é dado pessoal — LGPD, regra
+no `firestore.rules` do repositório da API e teste lá.
 
 ## Design system
 Paleta:
@@ -102,7 +106,16 @@ tipado, arquivo `.svg` e índice do README saírem de sincronia, ou se algum
   de apoio à decisão e nunca emite diagnóstico
 - Ao citar o Praat, deixar claro que é software independente da Universidade
   de Amsterdam, sem vínculo com o FONAR
-- O produto roda em Windows e Android. Nenhum mockup com macOS ou iPhone
+- O produto roda em Windows, macOS, Android e, no iPhone e iPad, como
+  versão web (o app compilado para o navegador, adicionado à Tela de
+  Início). Nenhum mockup com moldura de aparelho de marca (iPhone, Mac,
+  Galaxy): o mockup é o app, sem o aparelho
+- Mockup com números mostra que são de exemplo, e nenhuma medida aparece
+  classificada como normal ou alterada: o app só classifica com faixa de
+  referência validada, e hoje nenhuma há
+- Downloads: sempre de `src/lib/downloads.ts`, o "latest" do GitHub
+  Releases do app — o link não muda a cada versão. Nada de link de
+  download escrito à mão numa seção
 
 ## Convenções
 - Componentes em `src/components`, páginas em `src/app`
@@ -123,8 +136,11 @@ O projeto Firebase tem dois sites. O deploy vai para o target `fonar`.
 Nunca rode deploy sem nomear o target.
 
 ## Estado atual
-Fundação técnica e design definido. A implementação das seções ainda não foi
-feita — `src/app/page.tsx` pode ainda ser o template do create-next-app.
+A home tem as seções Hero, Funcionalidades, Comparativo, Base científica,
+Download e Rodapé (`src/components/secoes/`), com o conteúdo alinhado ao que
+o app faz de verdade. O download aponta para o release do app; o iPhone,
+para a versão web. Falta a marca definitiva: o favicon é provisório
+(`public/marca/README.md`), à espera da logo.
 
 ## Git
 Branch: `nome/USxx-featureImplementada` — ex.: `rafael/US01-secaoDownload`

@@ -12,25 +12,37 @@ const FUNCIONALIDADES: Funcionalidade[] = [
     icone: "gravar",
     titulo: "Gravação guiada",
     descricao:
-      "Protocolo passo a passo com orientação na tela. Distância, frase-alvo e checagem de qualidade — nada de gravações inutilizáveis.",
+      "Uma etapa por vez: o ruído da sala é medido antes, depois a vogal sustentada e a fala encadeada. Cada gravação é conferida — formato, silêncio, saturação — antes de seguir.",
   },
   {
     icone: "tendencia-sobe",
     titulo: "Análise acústica",
     descricao:
-      "Métricas de f0, jitter, shimmer e HNR calculadas pelo motor Praat, apresentadas com valores de referência para interpretação clínica.",
+      "f0, jitter, shimmer, HNR, CPPS e AVQI calculados no servidor pelo motor do Praat. Uma medida só aparece classificada quando há faixa de referência validada para ela.",
   },
   {
     icone: "reproduzir",
-    titulo: "Escalas perceptivas",
+    titulo: "CAPE-V",
     descricao:
-      "GRBAS e protocolos de autopercepção do paciente, registrados e datados na mesma avaliação que a análise acústica.",
+      "A escala perceptivo-auditiva numa régua de 100 mm, marcada ouvindo a própria gravação e registrada na mesma avaliação que a análise acústica.",
   },
   {
     icone: "documento",
     titulo: "Laudo em PDF",
     descricao:
-      "Laudo profissional com métricas, escalas e histórico do paciente, pronto para o prontuário ou para o médico solicitante.",
+      "Medidas, CAPE-V, espectrograma e a conclusão do profissional, com número de documento. Emitir de novo gera outro laudo, que diz qual substitui.",
+  },
+  {
+    icone: "confirmacao",
+    titulo: "Consentimento antes da voz",
+    descricao:
+      "A gravação só abre com o consentimento do paciente registrado, e a retirada do consentimento bloqueia novas gravações e envios.",
+  },
+  {
+    icone: "estado-sem-conexao",
+    titulo: "Funciona sem internet",
+    descricao:
+      "Grave no consultório sem sinal: as gravações ficam numa fila no aparelho e sobem para a análise quando a conexão voltar.",
   },
 ];
 
@@ -51,7 +63,7 @@ export function Funcionalidades() {
           </p>
         </Revelar>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {FUNCIONALIDADES.map((funcionalidade, indice) => (
             <Revelar
               key={funcionalidade.titulo}

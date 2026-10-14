@@ -5,6 +5,10 @@ import { Revelar } from "@/components/Revelar";
 /**
  * Mockup estático do app, apenas decorativo: dá concretude à promessa do
  * headline sem afirmar nada que o produto não faz (regra do CLAUDE.md).
+ *
+ * Os números são de exemplo, e dizem isso na tela. Nenhum aparece
+ * classificado: o app só classifica uma medida quando há faixa de
+ * referência validada, e hoje nenhuma há.
  */
 function MockupApp() {
   return (
@@ -14,9 +18,8 @@ function MockupApp() {
       <div className="rounded-3xl border border-lavanda bg-white p-5 shadow-xl shadow-roxo/10">
         <div className="flex items-center justify-between border-b border-lavanda pb-3">
           <p className="text-sm font-bold text-roxo">Avaliação vocal</p>
-          <span className="flex items-center gap-1.5 text-xs font-semibold text-secundario">
-            <Icone nome="estado-online" tamanho={10} className="text-roxo" />
-            Sessão ativa
+          <span className="rounded-full border border-lavanda bg-creme px-2.5 py-0.5 text-[11px] font-semibold text-secundario">
+            Valores de exemplo
           </span>
         </div>
 
@@ -29,7 +32,7 @@ function MockupApp() {
               <div>
                 <p className="text-sm font-bold text-roxo">Gravação guiada</p>
                 <p className="text-xs text-chumbo">
-                  Sustente a vogal /a/ por 5 segundos
+                  Vogal /a/ sustentada · fala encadeada
                 </p>
               </div>
             </div>
@@ -38,7 +41,14 @@ function MockupApp() {
           <div className="rounded-2xl bg-creme p-3.5">
             <p className="text-sm font-bold text-roxo">Análise acústica</p>
             <div className="mt-2 flex flex-wrap gap-1.5">
-              {["f0 médio 142 Hz", "Jitter 0,74%", "Shimmer 3,1%", "HNR 21,8 dB"].map(
+              {[
+                "AVQI 2,41",
+                "CPPS 15,2 dB",
+                "f0 142 Hz",
+                "Jitter 0,74%",
+                "Shimmer 3,1%",
+                "HNR 21,8 dB",
+              ].map(
                 (metrica) => (
                   <span
                     key={metrica}
@@ -52,9 +62,9 @@ function MockupApp() {
           </div>
 
           <div className="rounded-2xl bg-creme p-3.5">
-            <p className="text-sm font-bold text-roxo">Escala GRBAS</p>
+            <p className="text-sm font-bold text-roxo">CAPE-V</p>
             <p className="mt-1 text-xs text-chumbo">
-              G2 · R1 · B1 · A0 · S0
+              Grau geral 32 · Rugosidade 24 · Soprosidade 18
             </p>
           </div>
 
@@ -79,7 +89,7 @@ export function Hero() {
           <Revelar>
             <p className="inline-flex items-center gap-2 rounded-full border border-lavanda bg-white px-4 py-1.5 text-sm font-semibold text-secundario">
               <Icone nome="estado-online" tamanho={10} className="text-roxo" />
-              Em desenvolvimento — lançamento em breve
+              Para Windows, macOS, Android e iPhone
             </p>
           </Revelar>
 
@@ -91,15 +101,15 @@ export function Hero() {
 
           <Revelar atrasoSegundos={0.16}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-chumbo">
-              Gravação guiada, análise acústica, escalas perceptivas e laudo em
-              PDF — todo o processo da avaliação vocal em um único fluxo,
-              direto do seu celular ou computador.
+              Gravação guiada, análise acústica pelo motor do Praat, CAPE-V e
+              laudo em PDF — a avaliação vocal em um único fluxo, direto do
+              seu celular ou computador.
             </p>
           </Revelar>
 
           <Revelar atrasoSegundos={0.24}>
             <div className="mt-9 flex flex-wrap gap-4">
-              <Botao href="#captacao">Quero ser avisado</Botao>
+              <Botao href="#download">Baixar o FONAR</Botao>
               <Botao href="#funcionalidades" variante="secundario">
                 Ver funcionalidades
               </Botao>

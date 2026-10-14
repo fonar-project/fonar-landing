@@ -3,19 +3,19 @@ import { Revelar } from "@/components/Revelar";
 
 const PILARES = [
   {
-    titulo: "Motor Praat",
+    titulo: "Motor do Praat",
     descricao:
-      "As métricas acústicas são calculadas pelo Praat, software de referência mundial em análise de voz, usado em produção científica há três décadas.",
+      "As medidas acústicas são calculadas pelo Praat, software de análise de voz usado em pesquisa há mais de três décadas. O Praat é desenvolvido de forma independente na Universidade de Amsterdam e não tem vínculo com o FONAR.",
   },
   {
     titulo: "Sem reimplementação",
     descricao:
-      "Nada de fórmula reaproveitada: cada métrica sai da mesma rotina validada do Praat, executada por meio da ponte oficial parselmouth.",
+      "Nada de fórmula refeita: cada medida sai da rotina original do Praat, executada pela ponte parselmouth, e o AVQI pelo script oficial publicado pelos autores.",
   },
   {
-    titulo: "Valores de referência",
+    titulo: "Classificação só com referência",
     descricao:
-      "Cada métrica é apresentada com faixa de normalidade da literatura, para a interpretação clínica acontecer na tela, não depois.",
+      "Uma medida só aparece como dentro ou fora da faixa quando há faixa de referência validada para o perfil do paciente. Sem ela, o valor aparece sem rótulo — classificar sem referência válida seria pior do que não classificar.",
   },
 ];
 
