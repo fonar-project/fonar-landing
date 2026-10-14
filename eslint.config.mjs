@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Projeto Remotion separado, com lint e tsconfig próprios.
+    "video/**",
   ]),
   {
     // O componente Icone é o único ponto do site que renderiza SVG: um SVG
