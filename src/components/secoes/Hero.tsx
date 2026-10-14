@@ -83,7 +83,7 @@ function MockupApp() {
 
 export function Hero() {
   return (
-    <section className="overflow-hidden px-6 pb-20 pt-14 sm:pt-20">
+    <section className="overflow-hidden px-6 pb-20 pt-10 sm:pt-14">
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
         <div>
           <Revelar>

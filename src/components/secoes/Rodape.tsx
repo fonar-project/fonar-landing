@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { DOWNLOADS } from "@/lib/downloads";
 
 const classeDoLink =
@@ -8,7 +10,8 @@ export function Rodape() {
     <footer className="border-t border-lavanda bg-creme px-6 py-10">
       <div className="mx-auto flex max-w-6xl flex-col gap-6">
         <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
-          <p className="text-sm font-bold text-roxo">
+          <p className="flex items-center gap-2 text-sm font-bold text-roxo">
+            <Image src="/marca/fonar-simbolo.svg" alt="" width={28} height={28} />
             FONAR — Avaliação vocal clínica
           </p>
           <nav aria-label="Rodapé" className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
