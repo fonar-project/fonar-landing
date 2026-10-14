@@ -25,3 +25,5 @@ Não há ilustrações vetoriais no design system: espectrograma e formas de ond
 | `passo-pendente.svg` | passo aguardando na fila (06) |
 | `estado-online.svg` | indicador de conexão ativo (00, 01, 06, 11) |
 | `estado-sem-conexao.svg` | indicador sem conexão (00, 06) |
+| `mostrar-senha.svg` | campo de senha escondida: toque para ver o que foi digitado (00, conta, bloqueio) |
+| `ocultar-senha.svg` | campo de senha à mostra: toque para esconder de novo (00, conta, bloqueio) |
