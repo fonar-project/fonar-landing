@@ -32,9 +32,16 @@ favicon, logos de plataforma (Windows, Android ou o badge da Play Store),
 
 ## O que já existe
 
-- `favicon.svg` — **provisório**. Só a inicial desenhada na paleta, para o
-  site não ir a produção com o ícone do create-next-app. TODO: trocar pela
-  marca definitiva do FONAR quando ela existir, junto com o `icons` do
-  `metadata` em `src/app/layout.tsx`.
+A marca do FONAR (US47): uma onda de voz que vira ondas de sonar —
+fonoaudiologia mais sonar. Os arquivos de origem e o gerador ficam no
+repositório do app (`marca/` e `tool/gerar_marca.py`); o que está aqui é
+cópia. Mudou lá, muda aqui.
 
-O resto da pasta está vazio — nenhum outro asset de marca foi produzido.
+| Arquivo | Onde aparece |
+|---|---|
+| `favicon.svg`, `favicon-32.png` | aba do navegador (`metadata.icons` em `src/app/layout.tsx`) |
+| `apple-touch-icon.png` | Tela de Início do iPhone; sangrado, porque o iOS arredonda os cantos |
+| `og-image.png` | prévia do link em WhatsApp e redes (`metadata.openGraph`), 1200×630 |
+| `fonar-simbolo.svg` | cabeçalho e rodapé, ao lado do nome FONAR em texto |
+| `fonar-simbolo-negativo.svg` | o símbolo em creme, para fundo roxo ou escuro |
+| `fonar-assinatura.svg`, `fonar-assinatura-negativo.svg` | símbolo + nome com as letras em contorno, para uso fora do site (apresentação, monografia) |

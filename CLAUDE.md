@@ -136,11 +136,13 @@ O projeto Firebase tem dois sites. O deploy vai para o target `fonar`.
 Nunca rode deploy sem nomear o target.
 
 ## Estado atual
-A home tem as seções Hero, Funcionalidades, Comparativo, Base científica,
-Download e Rodapé (`src/components/secoes/`), com o conteúdo alinhado ao que
-o app faz de verdade. O download aponta para o release do app; o iPhone,
-para a versão web. Falta a marca definitiva: o favicon é provisório
-(`public/marca/README.md`), à espera da logo.
+A home tem o Cabeçalho (a marca) e as seções Hero, Funcionalidades,
+Comparativo, Base científica, Download e Rodapé (`src/components/secoes/`),
+com o conteúdo alinhado ao que o app faz de verdade. O download aponta para o
+release do app; o iPhone, para a versão web. A marca (US47) é a mesma do app:
+favicon, ícone do iPhone, imagem de compartilhamento e símbolo em
+`public/marca/`; os arquivos de origem estão em `marca/` no repositório do
+app.
 
 ## Git
 Branch: `nome/USxx-featureImplementada` — ex.: `rafael/US01-secaoDownload`

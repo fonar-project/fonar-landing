@@ -14,8 +14,8 @@ Os links moram em `src/lib/downloads.ts` e não mudam a cada versão.
 > [!IMPORTANT]
 > O conteúdo afirma só o que o app faz de verdade (regras em `CLAUDE.md`).
 > Não invente depoimentos, números ou logos; onde faltar conteúdo real, deixe
-> um `TODO` visível. A marca definitiva ainda não existe: o favicon é
-> provisório (`public/marca/README.md`).
+> um `TODO` visível. A marca do FONAR — o símbolo da onda de voz que vira
+> ondas de sonar — mora em `public/marca/` (ver o `README.md` de lá).
 
 ---
 
