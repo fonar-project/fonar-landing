@@ -37,12 +37,8 @@ export function Ciencia() {
         </Revelar>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {PILARES.map((pilar, indice) => (
-            <Revelar
-              key={pilar.titulo}
-              atrasoSegundos={0.1 + indice * 0.08}
-              className="h-full"
-            >
+          {PILARES.map((pilar) => (
+            <Revelar key={pilar.titulo} className="h-full">
               <article className="h-full rounded-3xl border border-lavanda bg-creme p-7">
                 <h3 className="text-lg font-bold text-roxo">{pilar.titulo}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-secundario">
@@ -53,7 +49,7 @@ export function Ciencia() {
           ))}
         </div>
 
-        <Revelar atrasoSegundos={0.3}>
+        <Revelar>
           <p className="mt-10 flex max-w-3xl items-start gap-3 rounded-2xl bg-creme p-5 text-sm leading-relaxed text-secundario">
             <Icone
               nome="informacao"

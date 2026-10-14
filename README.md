@@ -194,13 +194,15 @@ src/
     layout.tsx         layout raiz (fontes, <html>, metadata)
     page.tsx           home: as seções em ordem
     not-found.tsx      a página 404
-    globals.css        tokens do design system e a animação de entrada
+    globals.css        tokens do design system, a rolagem suave e a
+                       animação de entrada
   components/
     secoes/            Hero, Funcionalidades, Comparativo, Ciencia,
                        Download e Rodape
     icones/            o componente único de ícone (SVG embutido)
     Botao.tsx          o único visual de botão, sobre link
-    Revelar.tsx        a entrada escalonada, sem JS
+    Revelar.tsx        a entrada: ao rolar, escalonada entre os irmãos
+                       que chegam juntos; no Hero, ao carregar (US56)
   lib/
     downloads.ts       os links de download, num lugar só
 out/                   saída do build; é o que o Firebase publica (git-ignored)

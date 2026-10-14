@@ -84,13 +84,9 @@ export function Download() {
         </Revelar>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PLATAFORMAS.map((plataforma, indice) => (
-            <Revelar
-              key={plataforma.titulo}
-              atrasoSegundos={0.1 + indice * 0.08}
-              className="h-full"
-            >
-              <article className="flex h-full flex-col rounded-3xl bg-white p-7">
+          {PLATAFORMAS.map((plataforma) => (
+            <Revelar key={plataforma.titulo} className="h-full">
+              <article className="flex h-full flex-col rounded-3xl bg-white p-7 transition-shadow duration-150 focus-within:shadow-lg focus-within:shadow-roxo/10 hover:shadow-lg hover:shadow-roxo/10 motion-reduce:transition-none">
                 <h3 className="text-lg font-bold text-roxo">
                   {plataforma.titulo}
                 </h3>
@@ -124,7 +120,7 @@ export function Download() {
           ))}
         </div>
 
-        <Revelar atrasoSegundos={0.45}>
+        <Revelar>
           <p className="mt-10 flex max-w-3xl items-start gap-3 rounded-2xl bg-white p-5 text-sm leading-relaxed text-secundario">
             <Icone
               nome="informacao"

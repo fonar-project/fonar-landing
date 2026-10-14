@@ -44,7 +44,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="pt-BR" className={`${urbanist.variable} h-full antialiased`}>
+    // `data-scroll-behavior`: a rolagem suave (globals.css) vale nas âncoras
+    // da página, e o Next a desliga nas trocas de rota (Next 16).
+    <html
+      lang="pt-BR"
+      data-scroll-behavior="smooth"
+      className={`${urbanist.variable} h-full antialiased`}
+    >
       <body className="flex min-h-full flex-col bg-creme font-sans text-chumbo">
         {children}
       </body>

@@ -38,7 +38,7 @@ export function Botao({
       href={outras.href}
       target={externo ? "_blank" : undefined}
       rel={externo ? "noopener noreferrer" : undefined}
-      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 ${classesVariante[variante]} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-semibold transition-colors duration-150 motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 ${classesVariante[variante]} ${className}`}
     >
       {children}
     </a>
