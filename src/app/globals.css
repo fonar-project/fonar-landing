@@ -23,12 +23,31 @@
   --color-secundario-lavanda: #5a5472;
 
   --font-sans: var(--font-urbanist), ui-sans-serif, system-ui, sans-serif;
+
+  /* A curva das entradas: rápida no começo e assentando devagar, sem
+     passar do ponto. */
+  --ease-fonar: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Animação de entrada do design system: sobe 20px e aparece. O atraso de
-   cada elemento é controlado inline (style) pelo componente Revelar, criando
-   a entrada escalonada sem JS. prefers-reduced-motion desliga o movimento
-   para quem pediu menos animação. */
+/* Os links do cabeçalho, do Hero e do rodapé ("Baixar", "Ver
+   funcionalidades") rolam até a seção em vez de saltar — só para quem não
+   pediu menos movimento. */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Animação de entrada do design system: sobe 20px e aparece. Duas formas,
+   as duas pelo componente Revelar:
+
+   - ao carregar (o Hero): animação CSS, com o atraso de cada bloco inline;
+   - ao rolar (o resto): o Revelar marca `data-revelar="oculto"` no que está
+     abaixo da tela, depois que o JS roda, e troca para "entrando" quando o
+     bloco chega à tela. Sem JS, nenhum atributo: tudo aparece.
+
+   Só opacidade e transform: nada mexe no layout. prefers-reduced-motion
+   desliga o movimento para quem pediu menos animação. */
 @keyframes fonarRise {
   from {
     opacity: 0;
@@ -41,11 +60,30 @@
 }
 
 .animacao-fonar-rise {
-  animation: fonarRise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fonarRise 0.7s var(--ease-fonar) both;
+}
+
+[data-revelar="oculto"] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* A transição só existe no estado "entrando": esconder (o passo anterior)
+   é instantâneo, e acontece fora da tela. */
+[data-revelar="entrando"] {
+  transition:
+    opacity 0.7s var(--ease-fonar),
+    transform 0.7s var(--ease-fonar);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animacao-fonar-rise {
     animation: none;
+  }
+
+  [data-revelar] {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

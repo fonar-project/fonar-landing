@@ -37,7 +37,7 @@ export function Comparativo() {
         </Revelar>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <Revelar atrasoSegundos={0.1} className="h-full">
+          <Revelar className="h-full">
             <article className="flex h-full flex-col rounded-3xl bg-white p-7">
               <h3 className="text-lg font-bold text-secundario">
                 O jeito antigo
@@ -59,7 +59,7 @@ export function Comparativo() {
             </article>
           </Revelar>
 
-          <Revelar atrasoSegundos={0.18} className="h-full">
+          <Revelar className="h-full">
             <article className="relative flex h-full flex-col rounded-3xl border-2 border-roxo bg-white p-7 shadow-xl shadow-roxo/10">
               <p className="absolute -top-3.5 right-6 rounded-full bg-roxo px-4 py-1 text-xs font-bold text-white">
                 Proposta FONAR

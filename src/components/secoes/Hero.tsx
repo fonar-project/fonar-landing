@@ -86,20 +86,20 @@ export function Hero() {
     <section className="overflow-hidden px-6 pb-20 pt-10 sm:pt-14">
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
         <div>
-          <Revelar>
+          <Revelar aoCarregar>
             <p className="inline-flex items-center gap-2 rounded-full border border-lavanda bg-white px-4 py-1.5 text-sm font-semibold text-secundario">
               <Icone nome="estado-online" tamanho={10} className="text-roxo" />
               Para Windows, macOS, Android e iPhone
             </p>
           </Revelar>
 
-          <Revelar atrasoSegundos={0.08}>
+          <Revelar aoCarregar atrasoSegundos={0.08}>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight text-roxo sm:text-5xl lg:text-6xl">
               A avaliação vocal clínica, finalmente no século XXI.
             </h1>
           </Revelar>
 
-          <Revelar atrasoSegundos={0.16}>
+          <Revelar aoCarregar atrasoSegundos={0.16}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-chumbo">
               Gravação guiada, análise acústica pelo motor do Praat, CAPE-V e
               laudo em PDF — a avaliação vocal em um único fluxo, direto do
@@ -107,7 +107,7 @@ export function Hero() {
             </p>
           </Revelar>
 
-          <Revelar atrasoSegundos={0.24}>
+          <Revelar aoCarregar atrasoSegundos={0.24}>
             <div className="mt-9 flex flex-wrap gap-4">
               <Botao href="#download">Baixar o FONAR</Botao>
               <Botao href="#funcionalidades" variante="secundario">
@@ -117,7 +117,7 @@ export function Hero() {
           </Revelar>
         </div>
 
-        <Revelar atrasoSegundos={0.2} className="lg:justify-self-end">
+        <Revelar aoCarregar atrasoSegundos={0.2} className="lg:justify-self-end">
           <MockupApp />
         </Revelar>
       </div>
