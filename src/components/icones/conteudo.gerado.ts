@@ -11,6 +11,7 @@
 
 export const MIOLO_ICONES = {
   "adicionar": "<path d=\"M12 5v14M5 12h14\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
+  "ajuda": "<circle cx=\"12\" cy=\"12\" r=\"9\" stroke=\"currentColor\" stroke-width=\"1.8\"></circle><path d=\"M9.6 9.6a2.45 2.45 0 1 1 3.55 2.2c-.72.36-1.15.93-1.15 1.75v.35\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path><circle cx=\"12\" cy=\"16.9\" r=\"1.2\" fill=\"currentColor\"></circle>",
   "alerta": "<path d=\"M12 4l9 16H3z\" fill=\"currentColor\"></path>",
   "avancar": "<path d=\"M9 5l7 7-7 7\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
   "confirmacao": "<path d=\"M5 12.5l4.5 4.5L19 7\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>",
