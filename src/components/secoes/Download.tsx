@@ -46,9 +46,11 @@ const PLATAFORMAS: Plataforma[] = [
     href: DOWNLOADS.android,
     arquivo: "FONAR-Android.apk",
     primeiraVez: [
-      "Abra o arquivo baixado no próprio celular.",
+      "O download pode ficar alguns segundos em 100% enquanto o celular confere o arquivo. Espere terminar.",
+      "Abra o arquivo pela notificação “Download concluído” ou no app Arquivos, na pasta Downloads.",
       "O Android pede para permitir a instalação de apps desta fonte (o navegador ou o gerenciador de arquivos): permita e instale.",
       "Permita o uso do microfone na primeira gravação.",
+      "Se o Android disser que o app não é compatível com o celular, baixe o FONAR-Android-32bits.apk, em “versões do FONAR”, logo abaixo.",
     ],
   },
   {
