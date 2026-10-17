@@ -27,6 +27,20 @@
   /* A curva das entradas: rápida no começo e assentando devagar, sem
      passar do ponto. */
   --ease-fonar: cubic-bezier(0.22, 1, 0.36, 1);
+
+   /* A entrada de rota (template.tsx): 300ms, sobe 16px e aparece. */
+  --animate-pagina: paginaEntra 0.3s cubic-bezier(0.33, 1, 0.68, 1) backwards;
+
+  @keyframes paginaEntra {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 /* Os links do cabeçalho, do Hero e do rodapé ("Baixar", "Ver
