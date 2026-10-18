@@ -11,12 +11,12 @@ type PropsBotao = {
      */
     href: string;
     /**
-     * O link baixa um arquivo: abre na mesma aba, e não numa nova. O
-     * navegador baixa e a página fica onde está. Numa aba nova, o navegador
-     * do Android leva o download para uma janela à parte, onde o aviso que
-     * todo APK recebe não aparece — e o download fica parado em 100%.
+     * Link externo que abre na mesma aba, e não numa nova. Para o que se
+     * baixa: o navegador baixa e a página fica onde está. E para o caminho
+     * do APK, que tem de ser o mais parecido possível com abrir o GitHub
+     * direto no navegador (ver `downloads.ts`).
      */
-    baixaArquivo?: boolean;
+    mesmaAba?: boolean;
   };
 
 const classesVariante = {
@@ -33,13 +33,13 @@ const classesVariante = {
 export function Botao({
   variante = "primario",
   className = "",
-  baixaArquivo = false,
+  mesmaAba = false,
   children,
   ...outras
 }: PropsBotao) {
   const externo =
     !outras.href.startsWith("#") && !outras.href.startsWith("/");
-  const novaAba = externo && !baixaArquivo;
+  const novaAba = externo && !mesmaAba;
 
   return (
     <a
