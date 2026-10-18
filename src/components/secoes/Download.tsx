@@ -10,6 +10,8 @@ type Plataforma = {
   acao: string;
   href: string;
   arquivo: string;
+  /** Baixa um arquivo (na mesma aba) ou abre uma página (a versão web). */
+  baixa: boolean;
   /** O que fazer na primeira abertura, passo a passo. */
   primeiraVez: string[];
 };
@@ -21,6 +23,7 @@ const PLATAFORMAS: Plataforma[] = [
     acao: "Baixar para Windows",
     href: DOWNLOADS.windows,
     arquivo: "FONAR-Windows.zip",
+    baixa: true,
     primeiraVez: [
       "Descompacte o arquivo e abra o fonar_app dentro da pasta FONAR.",
       "Se aparecer “O Windows protegeu o computador”, clique em Mais informações e em Executar assim mesmo.",
@@ -33,6 +36,7 @@ const PLATAFORMAS: Plataforma[] = [
     acao: "Baixar para macOS",
     href: DOWNLOADS.macos,
     arquivo: "FONAR-macOS.zip",
+    baixa: true,
     primeiraVez: [
       "Descompacte o arquivo e arraste o FONAR para Aplicativos.",
       "Na primeira abertura o macOS bloqueia: abra Ajustes do Sistema → Privacidade e Segurança e clique em Abrir Mesmo Assim.",
@@ -45,8 +49,10 @@ const PLATAFORMAS: Plataforma[] = [
     acao: "Baixar o APK",
     href: DOWNLOADS.android,
     arquivo: "FONAR-Android.apk",
+    baixa: true,
     primeiraVez: [
-      "O download pode ficar alguns segundos em 100% enquanto o celular confere o arquivo. Espere terminar.",
+      "No fim do download, o navegador avisa que o arquivo pode ser perigoso: é o aviso de todo app instalado fora da Play Store. Confirme o download.",
+      "Se o download ficar parado em 100%, abra esta página direto no navegador, e não pelo link de um app de mensagens, e baixe de novo.",
       "Abra o arquivo pela notificação “Download concluído” ou no app Arquivos, na pasta Downloads.",
       "O Android pede para permitir a instalação de apps desta fonte (o navegador ou o gerenciador de arquivos): permita e instale.",
       "Permita o uso do microfone na primeira gravação.",
@@ -59,6 +65,7 @@ const PLATAFORMAS: Plataforma[] = [
     acao: "Abrir a versão web",
     href: DOWNLOADS.web,
     arquivo: "versão web",
+    baixa: false,
     primeiraVez: [
       "Abra a versão web no Safari, toque em Compartilhar e em Adicionar à Tela de Início.",
       "Abra sempre pelo ícone: assim os dados ficam guardados no aparelho e o FONAR abre mesmo sem internet.",
@@ -96,6 +103,7 @@ export function Download() {
 
                 <Botao
                   href={plataforma.href}
+                  baixaArquivo={plataforma.baixa}
                   className="mt-6 self-start"
                   aria-label={`${plataforma.acao} (${plataforma.arquivo})`}
                 >
