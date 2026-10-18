@@ -10,8 +10,8 @@ type Plataforma = {
   acao: string;
   href: string;
   arquivo: string;
-  /** Baixa um arquivo (na mesma aba) ou abre uma página (a versão web). */
-  baixa: boolean;
+  /** Abre na mesma aba (o que se baixa, e o APK) ou numa nova (a versão web). */
+  mesmaAba: boolean;
   /** O que fazer na primeira abertura, passo a passo. */
   primeiraVez: string[];
 };
@@ -23,7 +23,7 @@ const PLATAFORMAS: Plataforma[] = [
     acao: "Baixar para Windows",
     href: DOWNLOADS.windows,
     arquivo: "FONAR-Windows.zip",
-    baixa: true,
+    mesmaAba: true,
     primeiraVez: [
       "Descompacte o arquivo e abra o fonar_app dentro da pasta FONAR.",
       "Se aparecer “O Windows protegeu o computador”, clique em Mais informações e em Executar assim mesmo.",
@@ -36,7 +36,7 @@ const PLATAFORMAS: Plataforma[] = [
     acao: "Baixar para macOS",
     href: DOWNLOADS.macos,
     arquivo: "FONAR-macOS.zip",
-    baixa: true,
+    mesmaAba: true,
     primeiraVez: [
       "Descompacte o arquivo e arraste o FONAR para Aplicativos.",
       "Na primeira abertura o macOS bloqueia: abra Ajustes do Sistema → Privacidade e Segurança e clique em Abrir Mesmo Assim.",
@@ -48,15 +48,16 @@ const PLATAFORMAS: Plataforma[] = [
     onde: "Celular ou tablet Android",
     acao: "Baixar o APK",
     href: DOWNLOADS.android,
-    arquivo: "FONAR-Android.apk",
-    baixa: true,
+    arquivo: "FONAR-Android.apk, pela página do GitHub",
+    mesmaAba: true,
     primeiraVez: [
+      "O botão abre a página da versão no GitHub. Lá, em Assets, toque em FONAR-Android.apk.",
+      "Se a página abriu dentro de outro app, com um X no canto, antes de tocar no arquivo toque em ⋮ e em “Abrir no Chrome” (ou no navegador que você usa).",
       "No fim do download, o navegador avisa que o arquivo pode ser perigoso: é o aviso de todo app instalado fora da Play Store. Confirme o download.",
-      "Se o download ficar parado em 100%, é porque a página abriu dentro de outro app, como o e-mail ou o Telegram. Toque em ⋮, em “Abrir no Chrome” (ou no navegador que você usa), e baixe de novo por lá.",
       "Abra o arquivo pela notificação “Download concluído” ou no app Arquivos, na pasta Downloads.",
       "O Android pede para permitir a instalação de apps desta fonte (o navegador ou o gerenciador de arquivos): permita e instale.",
       "Permita o uso do microfone na primeira gravação.",
-      "Se o Android disser que o app não é compatível com o celular, baixe o FONAR-Android-32bits.apk, em “versões do FONAR”, logo abaixo.",
+      "Se o Android disser que o app não é compatível com o celular, baixe o FONAR-Android-32bits.apk, na mesma página do GitHub.",
     ],
   },
   {
@@ -65,7 +66,7 @@ const PLATAFORMAS: Plataforma[] = [
     acao: "Abrir a versão web",
     href: DOWNLOADS.web,
     arquivo: "versão web",
-    baixa: false,
+    mesmaAba: false,
     primeiraVez: [
       "Abra a versão web no Safari, toque em Compartilhar e em Adicionar à Tela de Início.",
       "Abra sempre pelo ícone: assim os dados ficam guardados no aparelho e o FONAR abre mesmo sem internet.",
@@ -103,7 +104,7 @@ export function Download() {
 
                 <Botao
                   href={plataforma.href}
-                  baixaArquivo={plataforma.baixa}
+                  mesmaAba={plataforma.mesmaAba}
                   className="mt-6 self-start"
                   aria-label={`${plataforma.acao} (${plataforma.arquivo})`}
                 >
