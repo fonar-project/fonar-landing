@@ -52,7 +52,7 @@ const PLATAFORMAS: Plataforma[] = [
     baixa: true,
     primeiraVez: [
       "No fim do download, o navegador avisa que o arquivo pode ser perigoso: é o aviso de todo app instalado fora da Play Store. Confirme o download.",
-      "Se o download ficar parado em 100%, abra esta página direto no navegador, e não pelo link de um app de mensagens, e baixe de novo.",
+      "Se o download ficar parado em 100%, é porque a página abriu dentro de outro app, como o e-mail ou o Telegram. Toque em ⋮, em “Abrir no Chrome” (ou no navegador que você usa), e baixe de novo por lá.",
       "Abra o arquivo pela notificação “Download concluído” ou no app Arquivos, na pasta Downloads.",
       "O Android pede para permitir a instalação de apps desta fonte (o navegador ou o gerenciador de arquivos): permita e instale.",
       "Permita o uso do microfone na primeira gravação.",
