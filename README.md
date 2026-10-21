@@ -9,13 +9,22 @@ Produção: **https://appfonar.web.app**
 A home apresenta o FONAR e leva ao **download**: Windows, macOS e Android pelo
 último release do [repositório do app](https://github.com/fonar-project/fonar-app/releases),
 e iPhone e iPad pela [versão web](https://fonar-project.github.io/fonar-app/).
-Os links moram em `src/lib/downloads.ts` e não mudam a cada versão.
+Os links moram em `src/lib/downloads.ts` e não mudam a cada versão. Windows e
+macOS baixam o arquivo direto, na mesma aba; o Android vai à página da versão
+no GitHub, onde se toca no APK — baixado por um link direto, ele caía numa
+janela à parte do navegador do celular e parava em 100% (US54).
 
 > [!IMPORTANT]
 > O conteúdo afirma só o que o app faz de verdade (regras em `CLAUDE.md`).
 > Não invente depoimentos, números ou logos; onde faltar conteúdo real, deixe
 > um `TODO` visível. A marca do FONAR — o símbolo da onda de voz que vira
 > ondas de sonar — mora em `public/marca/` (ver o `README.md` de lá).
+
+**Sumário:** [Stack](#stack) · [Pré-requisitos](#pré-requisitos) ·
+[Setup](#setup) · [Export estático](#a-restrição-do-export-estático) ·
+[Deploy](#deploy) · [Target do Firebase](#configuração-de-target-do-firebase) ·
+[Estrutura](#estrutura-de-pastas) · [Branch e commit](#branch-e-commit) ·
+[Armadilhas](#armadilhas-conhecidas)
 
 ---
 
@@ -101,9 +110,10 @@ Consequência direta — **nada disso funciona neste projeto**:
 
 ### O que fazer quando precisar de algo dinâmico
 
-Resolva **no cliente**, dentro de um componente `"use client"`:
-
-- **Qualquer outra chamada:** `fetch` para um serviço externo, feito no browser.
+Resolva **no cliente**, dentro de um componente `"use client"`: um `fetch`
+para um serviço externo, feito no navegador. O site hoje não chama serviço
+nenhum e não coleta dado nenhum — se um dia voltar a coletar, é dado pessoal
+(LGPD), com regra no `firestore.rules` do repositório da API e teste lá.
 
 Server Components continuam sendo o padrão para renderizar conteúdo — eles rodam
 em *build time*, não em request time. Use `"use client"` só onde houver
@@ -192,19 +202,24 @@ scripts/               gerar e verificar os ícones
 src/
   app/                 App Router
     layout.tsx         layout raiz (fontes, <html>, metadata)
+    template.tsx       a troca de página: um fade curto, só quando a rota
+                       troca — nunca na primeira abertura (US01)
     page.tsx           home: as seções em ordem
     not-found.tsx      a página 404
-    globals.css        tokens do design system, a rolagem suave e a
-                       animação de entrada
+    globals.css        tokens do design system, a rolagem suave e as
+                       animações de entrada
   components/
     secoes/            Hero, Funcionalidades, Comparativo, Ciencia,
                        Download e Rodape
     icones/            o componente único de ícone (SVG embutido)
-    Botao.tsx          o único visual de botão, sobre link
+    Botao.tsx          o único visual de botão, sobre link; link externo
+                       abre em aba nova, a não ser com `mesmaAba` (os
+                       downloads)
     Revelar.tsx        a entrada: ao rolar, escalonada entre os irmãos
                        que chegam juntos; no Hero, ao carregar (US56)
   lib/
-    downloads.ts       os links de download, num lugar só
+    downloads.ts       os links de download, num lugar só: o "latest" do
+                       release do app, e a página da versão para o Android
 out/                   saída do build; é o que o Firebase publica (git-ignored)
 .next/                 cache de build do Next (git-ignored)
 .firebase/             cache local do CLI do Firebase (git-ignored)
@@ -228,16 +243,22 @@ responsivo de 360px a 1920px.
 
 ```
 rafael/US01-secaoDownload
-matheus/US07-formularioContato
+matheus/US54-apkPelaPagina
 ```
 
-**Commit:** Conventional Commits, em português.
+**Commit:** Conventional Commits, em português, com o escopo da US quando
+houver.
 
 ```
-feat: adiciona secao de download na home
-fix: corrige contraste do botao primario
-chore: atualiza configuracao do eslint
+feat(US41): landing alinhada ao app e com os downloads
+fix(US54): o botão do Android leva à página da versão no GitHub
+chore: atualiza a configuração do eslint
 ```
+
+**Sem atribuição de IA** em nada que vai para o repositório — mensagem de
+commit, descrição de PR, comentário: nada de `Co-Authored-By: Claude`,
+"Generated with Claude Code" ou link de sessão. O autor do commit é sempre a
+pessoa que pediu a alteração.
 
 ---
 
