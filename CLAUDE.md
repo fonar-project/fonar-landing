@@ -63,6 +63,12 @@ elemento que se mova durante a leitura. Nada pisca nem repete.
 Respeitar `prefers-reduced-motion`: com a preferência ativa, tudo estático.
 Animação não pode atrasar a leitura nem mexer no layout.
 
+Uma entrada só, a do design system (`fonarRise` e `--ease-fonar`, em
+`globals.css`), pelo componente `Revelar`: ao rolar, cada bloco entra quando
+chega à tela; no Hero, ao carregar. A troca de página (`src/app/template.tsx`)
+é só um fade curto, e só quando a rota troca — nunca na primeira abertura,
+para o cabeçalho não começar invisível nem o Hero subir duas vezes.
+
 ## Ícones e marca — duas pastas, regras opostas
 São coisas diferentes e não podem se misturar: `icons` é design system
 compartilhado com o app, `marca` é identidade visual só da landing.
@@ -116,6 +122,11 @@ tipado, arquivo `.svg` e índice do README saírem de sincronia, ou se algum
 - Downloads: sempre de `src/lib/downloads.ts`, o "latest" do GitHub
   Releases do app — o link não muda a cada versão. Nada de link de
   download escrito à mão numa seção
+- Windows e macOS baixam o arquivo direto, na mesma aba (`mesmaAba` no
+  `Botao`). O Android vai à PÁGINA da versão no GitHub, e não ao APK: baixado
+  por link direto, o APK caía numa janela à parte do navegador do celular,
+  sem o aviso de arquivo perigoso, e parava em 100% (US54). A instrução diz
+  qual arquivo tocar lá
 
 ## Convenções
 - Componentes em `src/components`, páginas em `src/app`
@@ -138,7 +149,8 @@ Nunca rode deploy sem nomear o target.
 ## Estado atual
 A home tem o Cabeçalho (a marca) e as seções Hero, Funcionalidades,
 Comparativo, Base científica, Download e Rodapé (`src/components/secoes/`),
-com o conteúdo alinhado ao que o app faz de verdade. O download aponta para o
+com o conteúdo alinhado ao que o app faz de verdade, a entrada das seções ao
+rolar (US56) e a troca de página (US01). O download aponta para o
 release do app; o iPhone, para a versão web. A marca (US47) é a mesma do app:
 favicon, ícone do iPhone, imagem de compartilhamento e símbolo em
 `public/marca/`; os arquivos de origem estão em `marca/` no repositório do
@@ -146,5 +158,13 @@ app.
 
 ## Git
 Branch: `nome/USxx-featureImplementada` — ex.: `rafael/US01-secaoDownload`
-Commit: Conventional Commits em português
+Commit: Conventional Commits em português, com o escopo da US quando houver
 A `main` é protegida por ruleset: push direto é bloqueado pelo servidor.
+Merge na `main` publica em produção: confira o canal de preview do PR antes.
+
+Sem atribuição de IA em nada que vai para o repositório: nada de
+`Co-Authored-By: Claude`, `Claude-Session:`, "Generated with Claude Code" ou
+link de sessão em mensagem de commit, descrição de PR ou comentário. O autor
+do commit também é a pessoa, nunca `Claude <noreply@anthropic.com>`: antes do
+primeiro commit, confira `git config user.name` e `user.email` e use o nome e o
+e-mail de quem pediu a alteração, como nos commits anteriores dela.
