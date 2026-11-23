@@ -95,15 +95,16 @@ export function Hero() {
 
           <Revelar aoCarregar atrasoSegundos={0.08}>
             <h1 className="mt-6 text-4xl font-extrabold leading-tight text-roxo sm:text-5xl lg:text-6xl">
-              A avaliação vocal clínica, finalmente no século XXI.
+              Avaliação vocal clínica integrada, da gravação ao laudo.
             </h1>
           </Revelar>
 
           <Revelar aoCarregar atrasoSegundos={0.16}>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-chumbo">
-              Gravação guiada, análise acústica pelo motor do Praat, CAPE-V e
-              laudo em PDF — a avaliação vocal em um único fluxo, direto do
-              seu celular ou computador.
+              Gravação guiada, análise acústica realizada pelo motor do Praat,
+              avaliação perceptivo-auditiva pela escala CAPE-V e emissão de
+              laudo em PDF, reunidas em um único fluxo de trabalho, no
+              computador, no celular ou no tablet.
             </p>
           </Revelar>
 

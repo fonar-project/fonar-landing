@@ -30,12 +30,13 @@ export function Rodape() {
         </div>
         <div className="space-y-2 text-center text-sm leading-relaxed text-secundario sm:text-left">
           <p>
-            O FONAR é ferramenta de apoio à decisão clínica e não emite
-            diagnóstico. Praat é software independente da Universidade de
-            Amsterdam, sem vínculo com o FONAR.
+            O FONAR é uma ferramenta de apoio à decisão clínica e não emite
+            diagnóstico. O Praat é um software independente, desenvolvido na
+            Universidade de Amsterdam, sem vínculo com o FONAR.
           </p>
           <p>
-            Projeto de TCC de Engenharia de Software, PUC-Campinas. ©{" "}
+            Projeto desenvolvido como Trabalho de Conclusão de Curso de
+            Engenharia de Software da PUC-Campinas. ©{" "}
             {new Date().getFullYear()} FONAR.
           </p>
         </div>

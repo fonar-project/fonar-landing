@@ -2,21 +2,21 @@ import { Icone } from "@/components/icones";
 import { Revelar } from "@/components/Revelar";
 
 const JEITO_ANTIGO = [
-  "Gravador de voz do celular, sem protocolo nem orientação",
-  "Planilha com fórmulas manuais para jitter e shimmer",
-  "Praat no computador, parâmetros anotados à mão",
-  "Escalas perceptivas no papel, sem histórico",
-  "Laudo digitado peça por peça no editor de texto",
-  "Cada etapa guardada em um lugar diferente",
+  "Gravação no gravador de voz do celular, sem protocolo nem orientação de coleta",
+  "Cálculo de jitter e shimmer em planilhas, com fórmulas inseridas manualmente",
+  "Análise no Praat, com parâmetros anotados manualmente",
+  "Escalas perceptivo-auditivas registradas em papel, sem histórico",
+  "Laudo redigido manualmente em editor de texto",
+  "Informações de cada etapa armazenadas em locais diferentes",
 ];
 
 const JEITO_FONAR = [
-  "Gravação guiada no celular ou no computador, com o ruído da sala medido antes",
-  "Medidas acústicas calculadas pelo motor do Praat, sem copiar números à mão",
-  "CAPE-V na mesma avaliação, ouvindo a gravação",
-  "Consentimento e cadastro do paciente incluídos",
-  "Laudo em PDF gerado ao final da avaliação",
-  "Histórico e evolução do paciente em um só lugar",
+  "Gravação guiada no celular ou no computador, com medição prévia do ruído ambiente",
+  "Medidas acústicas calculadas pelo motor do Praat, sem transcrição manual de valores",
+  "CAPE-V registrada na mesma avaliação, durante a escuta da gravação",
+  "Cadastro e consentimento do paciente integrados ao fluxo",
+  "Laudo em PDF emitido ao final da avaliação",
+  "Histórico e evolução do paciente reunidos em um único local",
 ];
 
 export function Comparativo() {
@@ -28,11 +28,12 @@ export function Comparativo() {
             Comparativo
           </p>
           <h2 className="mt-3 max-w-2xl text-3xl font-extrabold text-roxo sm:text-4xl">
-            Jeito antigo vs. FONAR.
+            Fluxo tradicional e fluxo com o FONAR.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-secundario-lavanda">
-            Uma avaliação vocal completa hoje depende de meia dúzia de
-            ferramentas que não conversam entre si.
+            Atualmente, uma avaliação vocal completa costuma depender de
+            diversas ferramentas independentes, que não compartilham dados
+            entre si.
           </p>
         </Revelar>
 
@@ -40,7 +41,7 @@ export function Comparativo() {
           <Revelar className="h-full">
             <article className="flex h-full flex-col rounded-3xl bg-white p-7">
               <h3 className="text-lg font-bold text-secundario">
-                O jeito antigo
+                Fluxo tradicional
               </h3>
               <ul className="mt-6 flex-1 space-y-4">
                 {JEITO_ANTIGO.map((item) => (
@@ -64,7 +65,7 @@ export function Comparativo() {
               <p className="absolute -top-3.5 right-6 rounded-full bg-roxo px-4 py-1 text-xs font-bold text-white">
                 Proposta FONAR
               </p>
-              <h3 className="text-lg font-bold text-roxo">O jeito FONAR</h3>
+              <h3 className="text-lg font-bold text-roxo">Fluxo com o FONAR</h3>
               <ul className="mt-6 flex-1 space-y-4">
                 {JEITO_FONAR.map((item) => (
                   <li key={item} className="flex items-start gap-3">

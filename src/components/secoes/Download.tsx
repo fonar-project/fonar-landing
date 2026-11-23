@@ -25,9 +25,9 @@ const PLATAFORMAS: Plataforma[] = [
     arquivo: "FONAR-Windows.zip",
     mesmaAba: true,
     primeiraVez: [
-      "Descompacte o arquivo e abra o fonar_app dentro da pasta FONAR.",
-      "Se aparecer “O Windows protegeu o computador”, clique em Mais informações e em Executar assim mesmo.",
-      "Permita o uso do microfone quando o FONAR pedir.",
+      "Descompacte o arquivo baixado e abra o programa fonar_app, localizado na pasta FONAR.",
+      "Caso seja exibida a mensagem “O Windows protegeu o computador”, clique em “Mais informações” e, em seguida, em “Executar assim mesmo”. A mensagem é exibida porque o programa ainda não possui assinatura digital de código.",
+      "Quando solicitado, autorize o uso do microfone pelo FONAR.",
     ],
   },
   {
@@ -38,9 +38,9 @@ const PLATAFORMAS: Plataforma[] = [
     arquivo: "FONAR-macOS.zip",
     mesmaAba: true,
     primeiraVez: [
-      "Descompacte o arquivo e arraste o FONAR para Aplicativos.",
-      "Na primeira abertura o macOS bloqueia: abra Ajustes do Sistema → Privacidade e Segurança e clique em Abrir Mesmo Assim.",
-      "Permita o uso do microfone quando o FONAR pedir.",
+      "Descompacte o arquivo baixado e arraste o FONAR para a pasta Aplicativos.",
+      "Na primeira abertura, o macOS bloqueia o aplicativo. Para liberá-lo, abra Ajustes do Sistema → Privacidade e Segurança e clique em “Abrir Mesmo Assim”.",
+      "Quando solicitado, autorize o uso do microfone pelo FONAR.",
     ],
   },
   {
@@ -51,26 +51,26 @@ const PLATAFORMAS: Plataforma[] = [
     arquivo: "FONAR-Android.apk, pela página do GitHub",
     mesmaAba: true,
     primeiraVez: [
-      "O botão abre a página da versão no GitHub. Lá, em Assets, toque em FONAR-Android.apk.",
-      "Se a página abriu dentro de outro app, com um X no canto, antes de tocar no arquivo toque em ⋮ e em “Abrir no Chrome” (ou no navegador que você usa).",
-      "No fim do download, o navegador avisa que o arquivo pode ser perigoso: é o aviso de todo app instalado fora da Play Store. Confirme o download.",
-      "Abra o arquivo pela notificação “Download concluído” ou no app Arquivos, na pasta Downloads.",
-      "O Android pede para permitir a instalação de apps desta fonte (o navegador ou o gerenciador de arquivos): permita e instale.",
-      "Permita o uso do microfone na primeira gravação.",
-      "Se o Android disser que o app não é compatível com o celular, baixe o FONAR-Android-32bits.apk, na mesma página do GitHub.",
+      "O botão abre a página da versão no GitHub. Na seção “Assets”, toque no arquivo FONAR-Android.apk.",
+      "Caso a página tenha sido aberta dentro de outro aplicativo (com um X no canto superior), toque em ⋮ e em “Abrir no Chrome”, ou no navegador utilizado, antes de tocar no arquivo.",
+      "Ao final do download, o navegador informa que o arquivo pode ser perigoso. Esse aviso é exibido para todo aplicativo instalado fora da Play Store. Confirme o download.",
+      "Abra o arquivo pela notificação “Download concluído” ou pelo aplicativo Arquivos, na pasta Downloads.",
+      "O Android solicitará permissão para instalar aplicativos desta origem (o navegador ou o gerenciador de arquivos). Conceda a permissão e conclua a instalação.",
+      "Na primeira gravação, autorize o uso do microfone pelo FONAR.",
+      "Caso o Android informe que o aplicativo não é compatível com o aparelho, baixe o arquivo FONAR-Android-32bits.apk, disponível na mesma página do GitHub.",
     ],
   },
   {
     titulo: "iPhone e iPad",
-    onde: "No Safari, sem passar pela App Store",
+    onde: "No Safari, sem instalação pela App Store",
     acao: "Abrir a versão web",
     href: DOWNLOADS.web,
     arquivo: "versão web",
     mesmaAba: false,
     primeiraVez: [
-      "Abra a versão web no Safari, toque em Compartilhar e em Adicionar à Tela de Início.",
-      "Abra sempre pelo ícone: assim os dados ficam guardados no aparelho e o FONAR abre mesmo sem internet.",
-      "Antes de gravar, o FONAR confere se o Safari desligou o ajuste automático do microfone. Se não desligou, ele avisa e não grava — a gravação mudaria o que a análise mede.",
+      "Abra a versão web no Safari, toque em “Compartilhar” e, em seguida, em “Adicionar à Tela de Início”.",
+      "Abra o FONAR sempre pelo ícone criado na Tela de Início. Dessa forma, os dados permanecem armazenados no aparelho e o aplicativo pode ser aberto mesmo sem conexão com a internet.",
+      "Antes de cada gravação, o FONAR verifica se o Safari desativou os ajustes automáticos do microfone. Caso não tenham sido desativados, a gravação é bloqueada e o motivo é informado, pois esses ajustes alteram as características do sinal que a análise acústica mede.",
     ],
   },
 ];
@@ -84,12 +84,13 @@ export function Download() {
             Download
           </p>
           <h2 className="mt-3 max-w-2xl text-3xl font-extrabold text-roxo sm:text-4xl">
-            Baixe o FONAR.
+            Download do FONAR.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-secundario-lavanda">
-            O mesmo aplicativo, com as mesmas funções, no computador, no
-            celular e no tablet. Gravar funciona sem internet; a análise sobe
-            quando a conexão voltar.
+            O aplicativo oferece as mesmas funções no computador, no celular e
+            no tablet. A gravação funciona sem conexão com a internet, e as
+            gravações são enviadas para análise quando a conexão é
+            restabelecida.
           </p>
         </Revelar>
 
@@ -118,7 +119,7 @@ export function Download() {
                       tamanho={16}
                       className="transition-transform duration-200 group-open:rotate-90 motion-reduce:transition-none"
                     />
-                    Na primeira abertura
+                    Instruções para a primeira utilização
                   </summary>
                   <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-chumbo">
                     {plataforma.primeiraVez.map((passo) => (
@@ -140,10 +141,12 @@ export function Download() {
               className="mt-0.5 shrink-0 text-roxo"
             />
             <span>
-              As versões para computador ainda não têm assinatura de código,
-              por isso o sistema pede uma confirmação na primeira abertura. No
-              Mac e no computador, a versão web também funciona no navegador.
-              Todas as versões e as notas de cada uma estão em{" "}
+              As versões para computador ainda não possuem assinatura digital
+              de código; por esse motivo, o sistema operacional solicita uma
+              confirmação na primeira abertura. Em computadores com Windows ou
+              macOS, a versão web também pode ser utilizada pelo navegador.
+              Todas as versões e as respectivas notas de lançamento estão
+              disponíveis em{" "}
               <a
                 href={DOWNLOADS.todasAsVersoes}
                 target="_blank"
