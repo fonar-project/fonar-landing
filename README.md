@@ -306,3 +306,5 @@ Para conferir o build estático localmente, sirva a pasta `out/`:
 npm run build
 npx serve out
 ```
+
+Documentação completa do projeto: https://docs.google.com/document/d/1DMFEOsXgvAfBqFTI3iMQB-xAUbwPlLGu/edit?usp=sharing&ouid=106076943561746245160&rtpof=true&sd=true
