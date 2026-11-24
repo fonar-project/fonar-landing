@@ -128,6 +128,21 @@ tipado, arquivo `.svg` e índice do README saírem de sincronia, ou se algum
   sem o aviso de arquivo perigoso, e parava em 100% (US54). A instrução diz
   qual arquivo tocar lá
 
+## Redação — registro técnico e formal (US64)
+Feedback de uma fonoaudióloga que testou o produto (23/11/2026): o tom
+coloquial fazia o FONAR parecer pouco profissional. Para todo texto do site:
+- Registro formal e impessoal, como em material técnico da área da saúde.
+  Nada de gíria, trocadilho ou frase de efeito ("finalmente no século XXI",
+  "fórmula caseira", "jeito antigo")
+- Frases completas, com sujeito e verbo. Prefira explicar por extenso a
+  economizar palavras: clareza vale mais que concisão
+- Termos técnicos com o nome completo na primeira menção — "relação
+  harmônico-ruído (HNR)", "avaliação perceptivo-auditiva (CAPE-V)"
+- Instruções numeradas, uma ação por passo, com o nome exato do botão ou
+  da mensagem entre aspas, e o motivo quando ele não for óbvio
+- Nada ambíguo: diga quem faz o quê ("o sistema bloqueia", "autorize o uso
+  do microfone"), e não "pode dar problema" ou "sobe depois"
+
 ## Convenções
 - Componentes em `src/components`, páginas em `src/app`
 - Server Components por padrão; `"use client"` só quando houver interatividade

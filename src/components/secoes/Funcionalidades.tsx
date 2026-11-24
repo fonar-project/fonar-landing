@@ -12,37 +12,37 @@ const FUNCIONALIDADES: Funcionalidade[] = [
     icone: "gravar",
     titulo: "Gravação guiada",
     descricao:
-      "Uma etapa por vez: o ruído da sala é medido antes, depois a vogal sustentada e a fala encadeada. Cada gravação é conferida — formato, silêncio, saturação — antes de seguir.",
+      "A coleta é conduzida em etapas: primeiro, a medição do ruído ambiente; em seguida, a vogal sustentada e a fala encadeada. Cada gravação é verificada quanto ao formato, à presença de sinal e à saturação antes da etapa seguinte.",
   },
   {
     icone: "tendencia-sobe",
     titulo: "Análise acústica",
     descricao:
-      "f0, jitter, shimmer, HNR, CPPS e AVQI calculados no servidor pelo motor do Praat. Uma medida só aparece classificada quando há faixa de referência validada para ela.",
+      "Frequência fundamental (f0), jitter, shimmer, relação harmônico-ruído (HNR), CPPS e AVQI são calculados no servidor pelo motor do Praat. Uma medida somente é classificada quando existe faixa de referência validada para o perfil do paciente.",
   },
   {
     icone: "reproduzir",
     titulo: "CAPE-V",
     descricao:
-      "A escala perceptivo-auditiva numa régua de 100 mm, marcada ouvindo a própria gravação e registrada na mesma avaliação que a análise acústica.",
+      "Avaliação perceptivo-auditiva da qualidade vocal em escala visual analógica de 100 mm, registrada durante a escuta da própria gravação e vinculada à mesma sessão da análise acústica.",
   },
   {
     icone: "documento",
     titulo: "Laudo em PDF",
     descricao:
-      "Medidas, CAPE-V, espectrograma e a conclusão do profissional, com número de documento. Emitir de novo gera outro laudo, que diz qual substitui.",
+      "Documento com as medidas acústicas, a CAPE-V, o espectrograma e a conclusão do profissional, identificado por número próprio. A emissão é restrita a profissionais com inscrição no conselho conferida pela equipe do FONAR. Cada nova emissão gera outro documento, que indica qual laudo substitui.",
   },
   {
     icone: "confirmacao",
     titulo: "Consentimento antes da voz",
     descricao:
-      "A gravação só abre com o consentimento do paciente registrado, e a retirada do consentimento bloqueia novas gravações e envios.",
+      "A gravação somente é liberada após o registro do consentimento do paciente ou de seu responsável legal. A retirada do consentimento bloqueia novas gravações e novos envios.",
   },
   {
     icone: "estado-sem-conexao",
-    titulo: "Funciona sem internet",
+    titulo: "Funcionamento sem conexão",
     descricao:
-      "Grave no consultório sem sinal: as gravações ficam numa fila no aparelho e sobem para a análise quando a conexão voltar.",
+      "As gravações realizadas sem acesso à internet permanecem em uma fila no aparelho e são enviadas para análise quando a conexão é restabelecida.",
   },
 ];
 
@@ -58,8 +58,8 @@ export function Funcionalidades() {
             Um fluxo único, da gravação ao laudo.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-chumbo">
-            O que hoje se espalha por gravador, planilha, Praat e editor de
-            texto acontece dentro de uma única avaliação guiada.
+            Etapas que hoje são realizadas com gravador, planilha, Praat e
+            editor de texto passam a compor uma única avaliação guiada.
           </p>
         </Revelar>
 

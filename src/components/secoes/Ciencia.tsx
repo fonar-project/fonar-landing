@@ -5,17 +5,17 @@ const PILARES = [
   {
     titulo: "Motor do Praat",
     descricao:
-      "As medidas acústicas são calculadas pelo Praat, software de análise de voz usado em pesquisa há mais de três décadas. O Praat é desenvolvido de forma independente na Universidade de Amsterdam e não tem vínculo com o FONAR.",
+      "As medidas acústicas são calculadas pelo Praat, software de análise de voz utilizado em pesquisa há mais de três décadas. O Praat é desenvolvido de forma independente na Universidade de Amsterdam e não tem vínculo com o FONAR.",
   },
   {
-    titulo: "Sem reimplementação",
+    titulo: "Rotinas originais",
     descricao:
-      "Nada de fórmula refeita: cada medida sai da rotina original do Praat, executada pela ponte parselmouth, e o AVQI pelo script oficial publicado pelos autores.",
+      "Nenhuma fórmula é reescrita: cada medida é obtida pela rotina original do Praat, executada por meio da biblioteca parselmouth, e o AVQI é calculado pelo script oficial publicado por seus autores.",
   },
   {
-    titulo: "Classificação só com referência",
+    titulo: "Classificação condicionada à referência",
     descricao:
-      "Uma medida só aparece como dentro ou fora da faixa quando há faixa de referência validada para o perfil do paciente. Sem ela, o valor aparece sem rótulo — classificar sem referência válida seria pior do que não classificar.",
+      "Uma medida é apresentada como dentro ou fora da faixa somente quando existe faixa de referência validada para o perfil do paciente. Na ausência dessa faixa, o valor é exibido sem classificação, pois classificar sem referência válida poderia induzir a interpretações equivocadas.",
   },
 ];
 
@@ -28,11 +28,13 @@ export function Ciencia() {
             Base científica
           </p>
           <h2 className="mt-3 max-w-2xl text-3xl font-extrabold text-roxo sm:text-4xl">
-            Análise acústica com respaldo, não com fórmula caseira.
+            Análise acústica fundamentada em software de referência.
           </h2>
           <p className="mt-4 max-w-2xl text-lg text-chumbo">
-            A confiança num laudo vem da origem dos números. O FONAR não
-            reinventa acústica — ele entrega a acústica já validada.
+            A confiabilidade de um laudo depende da origem dos valores
+            apresentados. O FONAR não desenvolve algoritmos próprios de
+            análise acústica: utiliza o motor de um software consolidado na
+            pesquisa em voz.
           </p>
         </Revelar>
 
