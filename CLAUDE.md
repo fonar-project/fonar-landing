@@ -129,7 +129,7 @@ tipado, arquivo `.svg` e índice do README saírem de sincronia, ou se algum
   qual arquivo tocar lá
 
 ## Redação — registro técnico e formal (US64)
-Feedback de uma fonoaudióloga que testou o produto (23/11/2026): o tom
+Feedback de uma fonoaudióloga que testou o produto (23/10/2026): o tom
 coloquial fazia o FONAR parecer pouco profissional. Para todo texto do site:
 - Registro formal e impessoal, como em material técnico da área da saúde.
   Nada de gíria, trocadilho ou frase de efeito ("finalmente no século XXI",
